@@ -11,7 +11,7 @@ export const Register = () => {
   const navigate = useNavigate();
 
   const submitHandler = async(data) => {
-    const res = await axios.post("http://localhost:3000/user/user",data);
+    const res = await axios.post("https://mern24.onrender.com/user/user",data);
     console.log(res.status);
     console.log(res.data);
     if(res.status === 201){
