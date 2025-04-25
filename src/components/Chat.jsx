@@ -4,7 +4,7 @@ import { List, ListItem, ListItemText, Paper, Typography, Box, TextField, Button
 import io from "socket.io-client";
 import axios from "axios";
 
-const socket = io("https://mern24.onrender.com");
+const socket = io("http://localhost:3000");
 
 export const Chat = () => {
   const [users, setusers] = useState([]);
@@ -18,7 +18,7 @@ export const Chat = () => {
 
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("https://mern24.onrender.com/user/user");
+        const res = await axios.get("http://localhost:3000/user/user");
         setusers(res.data.data.filter((user) => user.userName !== userName));
       } catch (err) {
         console.log(err);
